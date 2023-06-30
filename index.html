@@ -6,6 +6,70 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Olá mundo</h1>
+    <div class="container-tarefas">
+        <header>
+            <h1>
+                Programa para anotar suas tarefas
+            </h1>
+        </header>
+        <form class="form-principal">
+            <p>Adicione suas tarefas:</p>
+            <div class="form-control">
+                <input type="text" id="input-tarefas" placeholder="insira suas tarefas">
+                <button type="submit">
+                    <i class="fa-thin fa-plus"></i>
+                </button>
+            </div>
+        </form>
+        <form id="form-edit">
+            <p>Edite sua tarefa:</p>
+            <div class="form-control">
+                <input type="text" id="input-tarefas" placeholder="insira suas tarefas">
+                <button type="submit">
+                    <i class="fa-solid fa-check-double"></i>
+                </button>
+            </div>
+            <button id="cancel-edit-btn">Cancelar</button>
+        </form>
+        <div id="toolbar">
+            <div id="search">
+                <h4>Pesquisar:</h4>
+                <form>
+                    <input type="text" id="search-input" placeholder="buscar">
+                    <!--Botão para limpar a pesquisa-->
+                    <button id="erase-button">
+                        <i class="fa-solid fa-delete-left"></i>
+                    </button>
+                </form>
+            </div>
+            <div id="filter">
+                <h4>Filtrar:</h4>
+                <select id="filter-select">
+                    <option value="all">Todos</option>
+                    <option value="done">Feitos</option>
+                    <option value="todo">A fazer</option>
+                </select>
+            </div>
+        </div>
+        <div id="todo-list">
+            <!--
+                Aqui estou utilizando classe pois com JS vou gerar várias tarefas e todas padronizadas
+            -->
+            <div class="todo">
+                <!--Isso é uma tarefa-->
+                <h3>Ação</h3>
+                <button class="finished-todo">
+                    <i class="fa-solid fa-check"></i>
+                </button>
+                <button class="edit-todo">
+                    <i class="fa-solid fa-pen"></i>
+                </button>
+                <button class="remove-todo">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <!--Fim de uma tarefas-->
+        </div>
+    </div>
 </body>
 </html>
