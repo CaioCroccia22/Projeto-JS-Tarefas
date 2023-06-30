@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Helvetica;
+    color: #333;
+    /*Pros inputs não passarem a largura maxima dos seus elementos pais*/
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../Image/6026259-tranquilo-verao-ferias-ferias-paisagem-tropical-ilha-por-do-sol-praia-palms-shore-calmo-mar-areia-exotico-natureza-cenario-inspirador-e-pacifico-paisagem-marinha-reflex.jpg);
+    background-color: white;
+    background-position: center;
+    /*Se adapta a tela do usuário*/
+    background-size: cover;
+}
+
+button{
+    background-color: #fdfdff;
+    color: #102f5e;
+    border: 2px solid #102f53;
+    padding: .3rem .6rem;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+
+}
+
+button:hover {
+    background-color: #102f5e;
+}
+
+/*button hover com o icone dentro*/
+
+button:hover > i {
+    color: white;
+}
+
+button i {
+    color: #102f5e;
+    font-weight: bold;
+}
+
