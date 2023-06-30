@@ -9,7 +9,7 @@
 
 body{
     background-image: url(../Image/6026259-tranquilo-verao-ferias-ferias-paisagem-tropical-ilha-por-do-sol-praia-palms-shore-calmo-mar-areia-exotico-natureza-cenario-inspirador-e-pacifico-paisagem-marinha-reflex.jpg);
-    background-color: white;
+    background-color: red;
     background-position: center;
     /*Se adapta a tela do usuário*/
     background-size: cover;
@@ -28,6 +28,7 @@ button{
 
 button:hover {
     background-color: #102f5e;
+    color: white;
 }
 
 /*button hover com o icone dentro*/
@@ -36,8 +37,38 @@ button:hover > i {
     color: white;
 }
 
+/*Aqui vamos também desabilitar 
+os eventos de clique nos icones que estão nos botões*/
 button i {
     color: #102f5e;
     font-weight: bold;
+    pointer-events: none;
 }
 
+input, 
+select{
+    padding: 0.5rem;
+
+}
+
+.hide {
+    display: none;
+}
+
+
+/*Cabeçalho do to do*/
+.container-tarefas{
+    max-width: 450px;
+    /*Limita a largura máxima e centraliza o container de tarefas na tela*/
+    margin: 3rem auto;
+    background-color: #fdfdfd;
+    padding: 1.5rem;
+    border-radius: 15px;
+
+}
+
+.container-tarefas header {
+    text-align: center;
+    padding: 0 1rem 1rem;
+    border: 1px bold #ccc;
+}
