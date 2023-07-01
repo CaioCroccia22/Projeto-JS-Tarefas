@@ -9,7 +9,7 @@
 
 body{
     background-image: url(../Image/6026259-tranquilo-verao-ferias-ferias-paisagem-tropical-ilha-por-do-sol-praia-palms-shore-calmo-mar-areia-exotico-natureza-cenario-inspirador-e-pacifico-paisagem-marinha-reflex.jpg);
-    background-color: red;
+    background-color: #102f5e;
     background-position: center;
     /*Se adapta a tela do usuário*/
     background-size: cover;
@@ -51,16 +51,13 @@ select{
 
 }
 
-.hide {
-    display: none;
-}
 
 
 /*Cabeçalho do to do*/
 .container-tarefas{
     max-width: 450px;
     /*Limita a largura máxima e centraliza o container de tarefas na tela*/
-    margin: 3rem auto;
+    margin: 0.3rem auto;
     background-color: #fdfdfd;
     padding: 1.5rem;
     border-radius: 15px;
@@ -70,5 +67,53 @@ select{
 .container-tarefas header {
     text-align: center;
     padding: 0 1rem 1rem;
-    border: 1px bold #ccc;
+    border-bottom: 1px bold #ccc;
+}
+
+#form-principal, #form-edit{
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+    
+}
+
+#form-principal p, 
+#form-edit p{
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+/*A div que abraça os inputs*/
+.form-control{
+    display: flex;
+    padding-bottom: 0.5rem;
+}
+
+.form-control input{
+    margin-right: 0.3rem;
+    
+}
+
+#toolbar {
+    padding: 1rem;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+#toolbar h4 {
+    margin-bottom: 1rem;
+}
+
+#search{
+    border-right: 1px solid #ddd;
+    padding-right: 1rem;
+    margin-right: 1rem;
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+}
+
+#search form{
+    display: flex;
 }
