@@ -13,7 +13,11 @@
 //Eventos
 todoForme.addEventListener("submit", (e) => {
    
-    e.preventDefault()
+    e.preventDefault();
 
-    console.log("Formulário enviado")
-})
+    const inputValue = todoInput.value;
+
+    if (inputValue) {
+        console.log(inputValue);
+    }
+});
