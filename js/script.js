@@ -12,7 +12,6 @@
 
 //Eventos
 todoForme.addEventListener("submit", (e) => {
-   
     e.preventDefault();
 
     const inputValue = todoInput.value;

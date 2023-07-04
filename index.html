@@ -2,10 +2,11 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <div class="container-tarefas">
@@ -18,7 +19,7 @@
             <p>Adicione suas tarefas:</p>
             <div class="form-control">
                 <input type="text" id="input-tarefas" placeholder="Insira suas tarefas">
-                <button type="submit">
+                <button type="submit" title="botão adicionar tarefas">
                     <i class="fa-thin fa-plus"></i>
                 </button>
             </div>
@@ -27,11 +28,11 @@
             <p>Edite sua tarefa:</p>
             <div class="form-control">
                 <input type="text" id="input-tarefas" placeholder="Insira suas tarefas">
-                <button type="submit">
+                <button type="submit" title="botão editar tarefas">
                     <i class="fa-solid fa-check-double"></i>
                 </button>
             </div>
-            <button id="cancel-edit-btn">Cancelar</button>
+            <button id="cancel-edit-btn"  type="reset" title="botão cancelar">Cancelar</button>
         </form>
         <div id="toolbar">
             <div id="search">
@@ -39,14 +40,14 @@
                 <form>
                     <input type="text" id="search-input" placeholder="Busque aqui">
                     <!--Botão para limpar a pesquisa-->
-                    <button id="erase-button">
+                    <button id="erase-button" type="reset" title="botão limpar pesquisa">
                         <i class="fa-solid fa-delete-left"></i>
                     </button>
                 </form>
             </div>
             <div id="filter">
                 <h4>Filtrar:</h4>
-                <select id="filter-select">
+                <select id="filter-select" title="pendencias de tarefas">
                     <option value="all">Todos</option>
                     <option value="done">Feitos</option>
                     <option value="todo">A fazer</option>
@@ -60,26 +61,26 @@
             <div class="todo">
                 <!--Isso é uma tarefa-->
                 <h3>Ação</h3>
-                <button class="finished-todo">
+                <button class="finished-todo" title="botão tarefa">
                     <i class="fa-solid fa-check"></i>
                 </button>
-                <button class="edit-todo">
+                <button class="edit-todo" title="botão tarefa">
                     <i class="fa-solid fa-pen"></i>
                 </button>
-                <button class="remove-todo">
+                <button class="remove-todo" title="botão tarefa">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="todo done">
                 <!--Isso é uma tarefa-->
                 <h3>Ação</h3>
-                <button class="finished-todo">
+                <button class="finished-todo" title="botão tarefa">
                     <i class="fa-solid fa-check"></i>
                 </button>
-                <button class="edit-todo">
+                <button class="edit-todo" title="botão tarefa">
                     <i class="fa-solid fa-pen"></i>
                 </button>
-                <button class="remove-todo">
+                <button class="remove-todo" title="botão tarefa">
                     <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
