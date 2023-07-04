@@ -5,8 +5,15 @@
     const editForm = document.querySelector("#form-edit");
     const editInput = document.querySelector("#input-tarefas");   
     const cancelEditBtn = document.querySelector("#cancel-edit-btn");
-jckc
+
 
 //Funções
 
+
 //Eventos
+todoForme.addEventListener("submit", (e) => {
+   
+    e.preventDefault()
+
+    console.log("Formulário enviado")
+})
