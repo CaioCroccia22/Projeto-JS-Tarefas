@@ -55,6 +55,8 @@ const saveTodo = (text) =>{
 }
 
 //Eventos
+
+//Colocar a tarefa
 todoForme.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -64,3 +66,20 @@ todoForme.addEventListener("submit", (e) => {
         saveTodo(inputValue)
     }
 });
+
+//Botões das tarefas
+document.addEventListener("click", (e) =>{
+
+    const targetEl = e.target;
+    //As ações no evento devem ser aplicados no elemento pai
+    const parentEl = targetEl.closest("div");
+
+    if(targetEl.classList.contains("finished-todo")) {
+        //Adicionando(altera) a classe done para os todos clicados na seta
+        parentEl.classList.toggle("done");
+    }
+
+    if(targetEl.classList.contains("remove-todo")) {
+        parentEl.remove();
+    }
+})
