@@ -52,7 +52,12 @@ const saveTodo = (text) =>{
     todoInput.value = "";
     todoInput.focus();
 
-}
+};
+    const toogleForms = () => {
+        editForm.classList.toogle("hide");
+        todoForme.classList.toggle("hide");
+        todoList.classList.toogle("hide");
+    }
 
 //Eventos
 
@@ -81,5 +86,9 @@ document.addEventListener("click", (e) =>{
 
     if(targetEl.classList.contains("remove-todo")) {
         parentEl.remove();
+    }
+    //Esconder o formulario e voltar o formulario de edição
+    if(targetEl.classList.contains("edit-todo")) {
+        toogleForms()
     }
 })
