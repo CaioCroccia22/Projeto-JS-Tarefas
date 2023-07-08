@@ -53,11 +53,9 @@ const saveTodo = (text) =>{
     todoInput.focus();
 
 };
-    const toogleForms = () => {
-        editForm.classList.toogle("hide");
-        todoForme.classList.toggle("hide");
-        todoList.classList.toogle("hide");
-    }
+
+//Função para esconder ou mostrar o edit form
+
 
 //Eventos
 
@@ -79,16 +77,23 @@ document.addEventListener("click", (e) =>{
     //As ações no evento devem ser aplicados no elemento pai
     const parentEl = targetEl.closest("div");
 
-    if(targetEl.classList.contains("finished-todo")) {
+    if (targetEl.classList.contains("finished-todo")) {
         //Adicionando(altera) a classe done para os todos clicados na seta
         parentEl.classList.toggle("done");
     }
 
-    if(targetEl.classList.contains("remove-todo")) {
+    if (targetEl.classList.contains("remove-todo")) {
         parentEl.remove();
     }
-    //Esconder o formulario e voltar o formulario de edição
-    if(targetEl.classList.contains("edit-todo")) {
-        toogleForms()
+
+    //Esconder o formulario e mostrar outro
+    if (targetEl.classList.contains("edit-todo")) {
+        toogleForms();
     }
-})
+});
+
+
+cancelEditBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+  toggleForms();
+});
