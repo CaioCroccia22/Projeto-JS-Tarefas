@@ -92,12 +92,14 @@ document.addEventListener("click", (e) =>{
 
     //Esconder o formulario e mostrar outro
     if (targetEl.classList.contains("edit-todo")) {
-        toggleForms(); }
+        toggleForms();
+    
+        
+      }
 });
 
 
 cancelEditBtn.addEventListener("click", (e) => {
-  e.preventDefault();
-
-  toggleForms();
-});
+    e.preventDefault();
+    toggleForms();
+  });

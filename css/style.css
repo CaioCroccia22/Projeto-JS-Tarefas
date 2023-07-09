@@ -15,6 +15,11 @@ body{
     background-size: cover;
 }
 
+.hide {
+    display: none;
+  }
+  
+
 button{
     background-color: #fdfdff;
     color: #102f5e;
