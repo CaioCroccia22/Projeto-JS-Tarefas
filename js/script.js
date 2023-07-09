@@ -55,8 +55,12 @@ const saveTodo = (text) =>{
 };
 
 //Função para esconder ou mostrar o edit form
-
-
+const toggleForms = () => {
+    editForm.classList.toggle("hide");
+    todoForme.classList.toggle("hide");
+    todoList.classList.toggle("hide");
+  };
+  
 //Eventos
 
 //Colocar a tarefa
@@ -88,12 +92,12 @@ document.addEventListener("click", (e) =>{
 
     //Esconder o formulario e mostrar outro
     if (targetEl.classList.contains("edit-todo")) {
-        toogleForms();
-    }
+        toggleForms(); }
 });
 
 
 cancelEditBtn.addEventListener("click", (e) => {
   e.preventDefault();
+
   toggleForms();
 });
