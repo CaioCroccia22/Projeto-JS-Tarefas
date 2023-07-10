@@ -120,7 +120,8 @@ document.addEventListener("click", (e) =>{
         editInput.value = todoTitle
 
         //Salva o valor anterior
-        oldInputValue.value = todoTitle
+        //Não vai o value porque é uma variavel e não um objeto
+        oldInputValue = todoTitle
 
     //Na edição precisa mapear tanto titulo do input quanto o valor da edição
 
