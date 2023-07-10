@@ -6,6 +6,7 @@
     const editInput = document.querySelector("#input-tarefas");   
     const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 
+    let oldInputValue;
 
 //Funções
 
@@ -60,6 +61,21 @@ const toggleForms = () => {
     todoForme.classList.toggle("hide");
     todoList.classList.toggle("hide");
   };
+
+
+const updateTodo = (text) => {
+    const todos = document.querySelectorAll("todo")
+
+    //Eles não são selecionados no começo pois os elementos 
+    //podem sofrer alteração ao longo do problema
+    todos.forEach((todo) => {
+        let todoTitle = todo.querySelector("h3")
+
+        if (todoTitle.innerText === oldInputValue ) {
+            todoTitle.innerText = text;
+        }
+    })
+}
   
 //Eventos
 
@@ -80,7 +96,13 @@ document.addEventListener("click", (e) =>{
     const targetEl = e.target;
     //As ações no evento devem ser aplicados no elemento pai
     const parentEl = targetEl.closest("div");
+    //Como não tem id iremos pegar pelo titulo
+    let todoTitle;
 
+    if (parentEl && parentEl.querySelector("h3")) {
+        todoTitle = parentEl.querySelector("h3").innerText;
+
+    }
     if (targetEl.classList.contains("finished-todo")) {
         //Adicionando(altera) a classe done para os todos clicados na seta
         parentEl.classList.toggle("done");
@@ -93,13 +115,37 @@ document.addEventListener("click", (e) =>{
     //Esconder o formulario e mostrar outro
     if (targetEl.classList.contains("edit-todo")) {
         toggleForms();
-    
+
+        //Muda o valor do input
+        editInput.value = todoTitle
+
+        //Salva o valor anterior
+        oldInputValue.value = todoTitle
+
+    //Na edição precisa mapear tanto titulo do input quanto o valor da edição
+
         
       }
 });
 
 
 cancelEditBtn.addEventListener("click", (e) => {
+    //PreventDefault - Para não enviar formulário
     e.preventDefault();
+    //Usando a função toogleForms para evitar repetição
     toggleForms();
   });
+
+  editForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    const editInputValue = editInput.value
+
+    if (editInputValue) {
+        //atualizar
+        updateTodo(editInputValue) {
+
+        }
+    }
+
+  })
