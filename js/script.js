@@ -62,20 +62,20 @@ const toggleForms = () => {
     todoList.classList.toggle("hide");
   };
 
-
+//Função para editar a tarefa
 const updateTodo = (text) => {
-    const todos = document.querySelectorAll("todo")
-
-    //Eles não são selecionados no começo pois os elementos 
-    //podem sofrer alteração ao longo do problema
+    const todos = document.querySelectorAll(".todo")
+  
     todos.forEach((todo) => {
-        let todoTitle = todo.querySelector("h3")
-
-        if (todoTitle.innerText === oldInputValue ) {
-            todoTitle.innerText = text;
-        }
-    })
-}
+      todoTitle = todo.querySelector("h3");
+  
+      if (todoTitle.innerText === oldInputValue) {
+        todoTitle.innerText = text;
+  
+       
+      }
+    });
+  };
   
 //Eventos
 
@@ -112,22 +112,32 @@ document.addEventListener("click", (e) =>{
         parentEl.remove();
     }
 
-    //Esconder o formulario e mostrar outro
     if (targetEl.classList.contains("edit-todo")) {
         toggleForms();
+    
+        editInput.value = todoTitle;
+        oldInputValue = todoTitle;
+      }
+    });
+
+
+
+    //Esconder o formulario e mostrar outro
+    //if (targetEl.classList.contains("edit-todo")) {
+       // toggleForms();
 
         //Muda o valor do input
-        editInput.value = todoTitle
+       // editInput.value = todoTitle;
 
         //Salva o valor anterior
         //Não vai o value porque é uma variavel e não um objeto
-        oldInputValue = todoTitle
+       // oldInputValue = todoTitle;
 
     //Na edição precisa mapear tanto titulo do input quanto o valor da edição
 
         
-      }
-});
+    //  }
+//});
 
 
 cancelEditBtn.addEventListener("click", (e) => {
@@ -148,4 +158,3 @@ cancelEditBtn.addEventListener("click", (e) => {
   
     toggleForms();
   });
- 
