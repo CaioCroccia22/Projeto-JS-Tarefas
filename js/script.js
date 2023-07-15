@@ -56,6 +56,7 @@ const saveTodo = (text) =>{
 };
 
 //Função para esconder ou mostrar o edit form
+//Certo
 const toggleForms = () => {
     editForm.classList.toggle("hide");
     todoForme.classList.toggle("hide");
@@ -99,6 +100,7 @@ document.addEventListener("click", (e) =>{
     //Como não tem id iremos pegar pelo titulo
     let todoTitle;
 
+    //Esses são os pré requisitos para ter um titulo
     if (parentEl && parentEl.querySelector("h3")) {
         todoTitle = parentEl.querySelector("h3").innerText;
 
@@ -112,32 +114,16 @@ document.addEventListener("click", (e) =>{
         parentEl.remove();
     }
 
+    //Certo
     if (targetEl.classList.contains("edit-todo")) {
-        toggleForms();
-    
-        editInput.value = todoTitle;
-        oldInputValue = todoTitle;
+     toggleForms();
+     //Parei aquiiiii
+     editInput.value = todoTitle
+     oldInputValue.value = todoTitle
       }
     });
 
 
-
-    //Esconder o formulario e mostrar outro
-    //if (targetEl.classList.contains("edit-todo")) {
-       // toggleForms();
-
-        //Muda o valor do input
-       // editInput.value = todoTitle;
-
-        //Salva o valor anterior
-        //Não vai o value porque é uma variavel e não um objeto
-       // oldInputValue = todoTitle;
-
-    //Na edição precisa mapear tanto titulo do input quanto o valor da edição
-
-        
-    //  }
-//});
 
 
 cancelEditBtn.addEventListener("click", (e) => {
@@ -147,7 +133,7 @@ cancelEditBtn.addEventListener("click", (e) => {
     toggleForms();
   });
 
-  editForm.addEventListener("submit", (e) => {
+editForm.addEventListener("submit", (e) => {
     e.preventDefault();
   
     const editInputValue = editInput.value;
