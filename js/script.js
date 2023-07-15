@@ -68,7 +68,8 @@ const updateTodo = (text) => {
     const todos = document.querySelectorAll(".todo")
   
     todos.forEach((todo) => {
-      todoTitle = todo.querySelector("h3");
+
+      let todoTitle = todo.querySelector("h3");
   
       if (todoTitle.innerText === oldInputValue) {
         todoTitle.innerText = text;
@@ -116,10 +117,10 @@ document.addEventListener("click", (e) =>{
 
     //Certo
     if (targetEl.classList.contains("edit-todo")) {
-     toggleForms();
+        toggleForms();
      //Parei aquiiiii
-     editInput.value = todoTitle
-     oldInputValue.value = todoTitle
+        editInput.value = todoTitle
+        oldInputValue = todoTitle
       }
     });
 
