@@ -65,6 +65,7 @@ const toggleForms = () => {
 
 //Função para editar a tarefa
 const updateTodo = (text) => {
+    
     const todos = document.querySelectorAll(".todo")
   
     todos.forEach((todo) => {
@@ -135,6 +136,7 @@ cancelEditBtn.addEventListener("click", (e) => {
   });
 
 editForm.addEventListener("submit", (e) => {
+
     e.preventDefault();
   
     const editInputValue = editInput.value;
