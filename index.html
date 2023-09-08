@@ -5,25 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-    <div class="container-tarefas">
+    <div class="todo-container">
         <header>
             <h1>
                 Anote suas tarefas
             </h1>
         </header>
-        <form id="form-principal">
+        <form id="todo-form">
             <p>Adicione suas tarefas:</p>
             <div class="form-control">
-                <input type="text" id="input-tarefas" placeholder="Insira suas tarefas">
+                <input type="text" id="todo-input" placeholder="Insira suas tarefas">
                 <button type="submit">
                     <i class="fa-thin fa-plus"></i>
                 </button>
             </div>
         </form>
-        <form id="form-edit" class="hide">
+        <form id="edit-form" class="hide">
             <p>Edite sua tarefa:</p>
             <div class="form-control">
                 <input type="text" id="input-tarefas" placeholder="Insira suas tarefas">
