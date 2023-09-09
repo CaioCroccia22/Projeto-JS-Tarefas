@@ -8,6 +8,8 @@ const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 const searchInput = document.querySelector("#erase-button");
 const filterBtn = document.querySelector("#filter-select");
 
+
+let oldInputValue;
 //Funções
 //Função que vai receber um text como parametro e vai retornar
 //A div de class todo
@@ -52,6 +54,25 @@ const toggleForms = () => {
 }
 
 
+const updateTodo = (text) => {
+
+    const todos = document.querySelectorAll(".todo");
+
+
+    todos.forEach((todo) => {
+
+        let todoTitle = todo.querySelector("h3");
+
+        
+
+        if (todoTitle.innerText === oldInputValue){
+            todoTitle.innerText = text
+        }
+    });
+
+
+}
+
 //Eventos
 todoForm.addEventListener("submit", (e) => {
 
@@ -62,21 +83,34 @@ todoForm.addEventListener("submit", (e) => {
         saveTodo(Inputvalue);
     }
 
-    
+
 });
 
 
 
 
-
-document.addEventListener ("click", (e) => {
+//Usei o documento para esse evento ser usado em qualquer elemento
+document.addEventListener("click", (e) => {
 
     const targetEl = e.target;
-    
+
     //Selecionei o elemento pai div mais próxima
     const parentEl = targetEl.closest("div");
 
-    if (targetEl.classList.contains("finish-todo")){
+    //Armazenar o titulo na variavel para realizar as ações
+    let todoTitle;
+
+    //Como nem todo elemento tem um titulo
+    if(parentEl && parentEl.querySelector("h3")) {
+        todoTitle = parentEl.querySelector("h3").innerHTML;
+    }
+
+
+
+
+
+
+    if (targetEl.classList.contains("finish-todo")) {
         //Adicionando a classe done para os todos que clicam na seta
         //É usado o toggle pois é possivel tanto selecionar quanto descelecionar
         parentEl.classList.toggle("done");
@@ -84,16 +118,19 @@ document.addEventListener ("click", (e) => {
 
 
     //Botão de remoção de tarefa
-    if(targetEl.classList.contains("remove-todo")){
+    if (targetEl.classList.contains("remove-todo")) {
         parentEl.remove();
     }
 
-    if(targetEl.classList.contains("edit-todo")){
+    if (targetEl.classList.contains("edit-todo")) {
         //Criando uma função para esconder o formulário 
-        toggleForms()
+        toggleForms();
+
+        editInput.value = todoTitle;
+        oldInputValue = todoTitle;
     }
 
-   
+
 });
 
 
@@ -104,4 +141,20 @@ document.addEventListener ("click", (e) => {
 cancelEditBtn.addEventListener("click", (e) => {
     e.preventDefault();
     toggleForms();
+})
+
+
+//Evento para editar o formulario ao clicar o botão
+
+editForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    const editInputValue = editInput.value
+
+    if(editInputValue){
+        //Atualizar
+        updateTodo(editInputValue)
+    }
+
+    toggleForms()
 })
