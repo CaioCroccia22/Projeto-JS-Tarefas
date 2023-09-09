@@ -11,7 +11,6 @@ const filterBtn = document.querySelector("#filter-select");
 //Funções
 //Função que vai receber um text como parametro e vai retornar
 //A div de class todo
-
 const saveTodo = (text) => {
 
     const todo = document.createElement("div");
@@ -44,6 +43,12 @@ const saveTodo = (text) => {
     todoInput.focus();
 
 
+};
+
+const toggleForms = () => {
+    editForm.classList.toggle("hide");
+    todoForm.classList.toggle("hide");
+    todoList.classList.toggle("hide");
 }
 
 
@@ -60,7 +65,9 @@ todoForm.addEventListener("submit", (e) => {
     
 });
 
-// 
+
+
+
 
 document.addEventListener ("click", (e) => {
 
@@ -81,6 +88,20 @@ document.addEventListener ("click", (e) => {
         parentEl.remove();
     }
 
+    if(targetEl.classList.contains("edit-todo")){
+        //Criando uma função para esconder o formulário 
+        toggleForms()
+    }
+
    
 });
 
+
+
+//Quando ele estiver na edição de uma ação
+//Vai ter a opção de cancelar com o botão nesse caso 
+//Vai ser criado o evento no botão de edição
+cancelEditBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    toggleForms();
+})
