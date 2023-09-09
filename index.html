@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="js/script.js"></script>
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <div class="todo-container">
@@ -18,7 +18,7 @@
         <form id="todo-form">
             <p>Adicione suas tarefas:</p>
             <div class="form-control">
-                <input type="text" id="input-tarefas" placeholder="Insira suas tarefas">
+                <input type="text" id="todo-input" placeholder="Insira suas tarefas">
                 <button type="submit">
                     <i class="fa-thin fa-plus"></i>
                 </button>
@@ -27,7 +27,7 @@
         <form id="edit-form" class="hide">
             <p>Edite sua tarefa:</p>
             <div class="form-control">
-                <input type="text" id="input-tarefas" placeholder="Insira suas tarefas">
+                <input type="text" id="edit-input" placeholder="Insira suas tarefas">
                 <button type="submit" title="botão editar tarefas">
                     <i class="fa-solid fa-check-double"></i>
                 </button>
@@ -61,7 +61,7 @@
             <div class="todo">
                 <!--Isso é uma tarefa-->
                 <h3>Ação</h3>
-                <button class="finished-todo" title="botão tarefa">
+                <button class="finish-todo" title="botão tarefa">
                     <i class="fa-solid fa-check"></i>
                 </button>
                 <button class="edit-todo" title="botão tarefa">
