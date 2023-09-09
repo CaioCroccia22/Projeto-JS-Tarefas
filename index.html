@@ -35,26 +35,20 @@
             </div>
             <button id="cancel-edit-btn"  type="reset" title="botão cancelar">Cancelar</button>
         </form>
+
+
         <div id="toolbar">
-            <div id="search">
-                <h4>Pesquisar:</h4>
-                <form>
-                    <input type="text" id="search-input" placeholder="Busque aqui">
-                    <!--Botão para limpar a pesquisa-->
-                    <button id="erase-button" type="reset" title="botão limpar pesquisa">
-                        <i class="fa-solid fa-delete-left"></i>
-                    </button>
-                </form>
-            </div>
-            <div id="filter">
-                <h4>Filtrar:</h4>
-                <select id="filter-select" title="pendencias de tarefas">
-                    <option value="all">Todos</option>
-                    <option value="done">Feitos</option>
-                    <option value="todo">A fazer</option>
-                </select>
+            <!--
+                Calendário
+            -->
+
+            <div class="date">
+
             </div>
         </div>
+      
+
+
         <div id="todo-list">
             <!--
                 Aqui estou utilizando classe pois com JS vou gerar várias tarefas e todas padronizadas

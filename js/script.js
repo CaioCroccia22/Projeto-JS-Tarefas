@@ -9,7 +9,13 @@ const searchInput = document.querySelector("#erase-button");
 const filterBtn = document.querySelector("#filter-select");
 
 
+const date = new Date();
+const data = document.querySelector(".date");
+data.innerHTML = date;
+
 let oldInputValue;
+
+
 //Funções
 //Função que vai receber um text como parametro e vai retornar
 //A div de class todo
@@ -35,8 +41,13 @@ const saveTodo = (text) => {
 
     const deleteBtn = document.createElement("button")
     deleteBtn.classList.add("remove-todo")
-    doneBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>'
+    deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>'
     todo.appendChild(deleteBtn)
+
+
+    
+    
+   
 
     todoList.appendChild(todo);
     //Para limpara o que foi digitado no input
@@ -44,8 +55,12 @@ const saveTodo = (text) => {
     //Para voltar o foco ao todoInput
     todoInput.focus();
 
-
 };
+
+
+
+
+
 
 const toggleForms = () => {
     editForm.classList.toggle("hide");
@@ -53,7 +68,7 @@ const toggleForms = () => {
     todoList.classList.toggle("hide");
 }
 
-
+//Função que atualiza o Titulo do Todo(Tarefa)
 const updateTodo = (text) => {
 
     const todos = document.querySelectorAll(".todo");
@@ -74,6 +89,9 @@ const updateTodo = (text) => {
 }
 
 //Eventos
+
+
+//Botão que adiciona o todo(Tarefa)
 todoForm.addEventListener("submit", (e) => {
 
     e.preventDefault();
