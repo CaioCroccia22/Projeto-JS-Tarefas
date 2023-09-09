@@ -38,7 +38,10 @@ const saveTodo = (text) => {
     todo.appendChild(deleteBtn)
 
     todoList.appendChild(todo);
-
+    //Para limpara o que foi digitado no input
+    todoInput.value = "";
+    //Para voltar o foco ao todoInput
+    todoInput.focus();
 
 
 }
@@ -54,6 +57,30 @@ todoForm.addEventListener("submit", (e) => {
         saveTodo(Inputvalue);
     }
 
-    console.log(Inputvalue);
-})
+    
+});
+
+// 
+
+document.addEventListener ("click", (e) => {
+
+    const targetEl = e.target;
+    
+    //Selecionei o elemento pai div mais próxima
+    const parentEl = targetEl.closest("div");
+
+    if (targetEl.classList.contains("finish-todo")){
+        //Adicionando a classe done para os todos que clicam na seta
+        //É usado o toggle pois é possivel tanto selecionar quanto descelecionar
+        parentEl.classList.toggle("done");
+    }
+
+
+    //Botão de remoção de tarefa
+    if(targetEl.classList.contains("remove-todo")){
+        parentEl.remove();
+    }
+
+   
+});
 
