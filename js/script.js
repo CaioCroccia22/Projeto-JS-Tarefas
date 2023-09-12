@@ -7,11 +7,9 @@ const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 const searchInput = document.querySelector("#erase-button");
 const filterBtn = document.querySelector("#filter-select");
+const plusBtn = document.querySelector("btn-cont-plus");
 
 
-const date = new Date();
-const data = document.querySelector(".date");
-data.innerHTML = date;
 
 let oldInputValue;
 
@@ -47,7 +45,6 @@ const saveTodo = (text) => {
 
     
     
-   
 
     todoList.appendChild(todo);
     //Para limpara o que foi digitado no input
@@ -57,8 +54,14 @@ const saveTodo = (text) => {
 
 };
 
+let number = 0;
 
-
+//Função para aumentar o contador
+const plusCount = () => {
+    
+    number++;
+    document.querySelectorAll("#cont").innerHTML = number;
+}
 
 
 
@@ -103,6 +106,10 @@ todoForm.addEventListener("submit", (e) => {
 
 
 });
+
+
+//Botão para aumentar o contador
+plusBtn.addEventListener("click", plusCount());
 
 
 

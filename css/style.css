@@ -167,3 +167,9 @@ select{
     text-decoration: line-through;
     font-style: italic;
 }
+
+.date{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
