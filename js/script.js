@@ -55,31 +55,6 @@ const saveTodo = (text) => {
 
 };
 
-
-//Variavel para o contador
-let number = 0;
-
-//Função para aumentar o contador
-const plusCount = () => {
-    
-    
-    number++;
-    document.querySelector("#cont").innerHTML = number;
-
-}
-
-//Função para abaixar o contador
-const minusCount = () => {
-
-    if (number => 1){
-    number--;
-    document.querySelector("#count").innerHTML = number;
-    }
-    
-}
-
-
-
 const toggleForms = () => {
     editForm.classList.toggle("hide");
     todoForm.classList.toggle("hide");
@@ -123,12 +98,25 @@ todoForm.addEventListener("submit", (e) => {
 });
 
 
+//Variavel para o contador
+let number = 0;
+
 //Botão para aumentar o contador
-plusBtn.addEventListener("click", plusCount);
+plusBtn.addEventListener("click", () => {
+    number++;
+    document.querySelector("#cont").innerHTML = number;
+});
 
 
 //Botão para diminuir o contador
-minusBtn.addEventListener("click", minusCount);
+minusBtn.addEventListener("click", () => {
+     console.log("Foii")
+    if (number > 0){
+        number--;
+        document.querySelector("#count").textContent = number;
+        }
+    
+});
 
 //Usei o documento para esse evento ser usado em qualquer elemento
 document.addEventListener("click", (e) => {
