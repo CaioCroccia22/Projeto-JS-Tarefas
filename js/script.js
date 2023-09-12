@@ -7,7 +7,8 @@ const editInput = document.querySelector("#edit-input");
 const cancelEditBtn = document.querySelector("#cancel-edit-btn");
 const searchInput = document.querySelector("#erase-button");
 const filterBtn = document.querySelector("#filter-select");
-const plusBtn = document.querySelector("btn-cont-plus");
+const plusBtn = document.querySelector("#btn-cont-plus");
+const minusBtn = document.querySelector("#btn-cont-min");
 
 
 
@@ -54,13 +55,27 @@ const saveTodo = (text) => {
 
 };
 
+
+//Variavel para o contador
 let number = 0;
 
 //Função para aumentar o contador
 const plusCount = () => {
     
+    
     number++;
-    document.querySelectorAll("#cont").innerHTML = number;
+    document.querySelector("#cont").innerHTML = number;
+
+}
+
+//Função para abaixar o contador
+const minusCount = () => {
+
+    if (number => 1){
+    number--;
+    document.querySelector("#count").innerHTML = number;
+    }
+    
 }
 
 
@@ -109,10 +124,11 @@ todoForm.addEventListener("submit", (e) => {
 
 
 //Botão para aumentar o contador
-plusBtn.addEventListener("click", plusCount());
+plusBtn.addEventListener("click", plusCount);
 
 
-
+//Botão para diminuir o contador
+minusBtn.addEventListener("click", minusCount);
 
 //Usei o documento para esse evento ser usado em qualquer elemento
 document.addEventListener("click", (e) => {
