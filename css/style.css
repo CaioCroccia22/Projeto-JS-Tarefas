@@ -143,12 +143,15 @@ select{
 
 .todo {
     display: flex;
-    justify-content: space-around;
+    justify-content: right;
+    gap: 2rem;
     align-items: center;
     padding: 2rem;
     border: 1px solid #ddd;
     transition: .3s;
+    
 }
+
 
 .todo h3{
     font-size: 1rem;
@@ -168,8 +171,35 @@ select{
     font-style: italic;
 }
 
-.date{
+.container-count{
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 1rem;
+    font-weight: bold;
+    
+}
+
+#btn-cont-plus, #btn-cont-min {
+    margin: 0 0.5rem;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+
+}
+
+#display-cont{
+    padding-top: 1rem;
+    display: flex;
+    align-items: center;
+
+}
+
+div#display-cont {
+    gap: 2rem;
+}
+
+
+span#cont{
+    display: flex;
+    align-items: center;
 }

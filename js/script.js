@@ -43,6 +43,7 @@ const saveTodo = (text) => {
     deleteBtn.innerHTML = '<i class="fa-solid fa-xmark"></i>'
     todo.appendChild(deleteBtn)
 
+   
 
     
     
@@ -98,25 +99,7 @@ todoForm.addEventListener("submit", (e) => {
 });
 
 
-//Variavel para o contador
-let number = 0;
 
-//Botão para aumentar o contador
-plusBtn.addEventListener("click", () => {
-    number++;
-    document.querySelector("#cont").innerHTML = number;
-});
-
-
-//Botão para diminuir o contador
-minusBtn.addEventListener("click", () => {
-     console.log("Foii")
-    if (number > 0){
-        number--;
-        document.querySelector("#count").textContent = number;
-        }
-    
-});
 
 //Usei o documento para esse evento ser usado em qualquer elemento
 document.addEventListener("click", (e) => {
